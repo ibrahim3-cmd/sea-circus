@@ -27,14 +27,16 @@ window.addEventListener('mouseout', () => {
 
 function init() {
     fishArray = [];
-    const totalFish = 12; // Reduced slightly
+    const totalFish = 15; // Increased a bit for variety
     
     for (let i = 0; i < totalFish; i++) {
         let r = Math.random();
-        // 60% Real Fish (Fish3), 20% Smooth (Fish2), 20% Shrimp (Fish1)
-        if (r < 0.6) {
+        // 40% Fish3 (Real), 30% Fish4 (Jellyfish), 15% Fish2, 15% Fish1
+        if (r < 0.4) {
             fishArray.push(new Fish3(width, height));
-        } else if (r < 0.8) {
+        } else if (r < 0.7) {
+            fishArray.push(new Fish4(width, height));
+        } else if (r < 0.85) {
             fishArray.push(new Fish2(width, height));
         } else {
             fishArray.push(new Fish1(width, height));
